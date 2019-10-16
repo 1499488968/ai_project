@@ -33,10 +33,9 @@ $('#submit').click(function () {
         contentType: false,
 
         success: function (data) {
-            alert(data['message']);
             if (data['status'] == '0') {
-                let path = '/static/result/'
-                $('#result').attr('src', path + data['result'])
+                let path = '/static/result/';
+                $('#result-img').attr('src', path + data['result'])
             }
         },
 

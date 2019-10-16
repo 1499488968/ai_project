@@ -1,39 +1,70 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
-    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
 
+    <link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <title>测试界面</title>
 </head>
 <body>
 
-<form>
-    <input type="file" id="image" accept="image/*">
+<div class="form-row">
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img id="choose-img">
+            <div class="caption">
+                <h3>上传图片</h3>
+                <p>选择要处理的图片</p>
+                <p>
+                    <input type="file" id="image" accept="image/*">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img id="style-img">
+            <div class="caption">
+                <h3>风格图片</h3>
+                <p>选择的要生成的风格</p>
+                <p>
+                    <select id="choice" class="form-control input-md">
+                        <option value="0">星空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <label for="choice">
-        <select id="choice">
-            <option value="0">星空</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select>
-    </label>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img id="result-img">
+            <div class="caption">
+                <h3>生成图片</h3>
+                <p>生成图片</p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">
+                        下载
+                    </a>
+                    <a href="#" class="btn btn-default" role="button" id="submit">
+                        生成
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <input type="button" id="submit" value="生成">
-</form>
-
-
-<img id="choose-img" style="width: 200px; height: 200px">
-
-<img id="style-img" style="width: 300px; height: 200px">
-
-<img id="result" style="width: 300px; height: 200px">
+</div>
 
 </body>
 
