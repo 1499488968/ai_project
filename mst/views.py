@@ -34,7 +34,7 @@ def upload_image(request):
             return HttpResponse(json.dumps({'status': 1, 'message': '没有需要上传的文件!'}))
         else:
             # 上传文件本地保存路径， image是static文件夹下专门存放图片的文件夹
-            path = os.path.join(STATICFILES_DIRS[0], 'image/' + image.name)
+            path = os.path.join(STATICFILES_DIRS[0], 'upload/' + image.name)
             if image.multiple_chunks():  # 判断上传文件大于2.5MB的大文件
                 # 为真
                 file_yield = image.chunks()  # 迭代写入文件

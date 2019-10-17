@@ -1,5 +1,5 @@
 // 显示选择的图片
-$('#image').change(function () {
+$('#upload').change(function () {
     let image = this.files[0];
     let reader = new FileReader();
     reader.readAsDataURL(image);
@@ -19,13 +19,13 @@ $('#choice').change(function () {
 // 上传生成图片
 $('#submit').click(function () {
     let formData = new FormData();
-    let image = $('#image')[0].files[0];
+    let image = $('#upload')[0].files[0];
     let choice = $('#choice').val();
     formData.append('image', image);
     formData.append('choice', choice);
 
     $.ajax({
-        url: '/upload-image/',
+        url: 'upload-image/',
         type: 'POST',
         dataType: "json",//预期服务器返回的数据类型
         data: formData,
@@ -33,6 +33,8 @@ $('#submit').click(function () {
         contentType: false,
 
         success: function (data) {
+            console.log(data['message']);
+
             if (data['status'] == '0') {
                 let path = '/static/result/';
                 $('#result-img').attr('src', path + data['result'])

@@ -1,2 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
-.idea
+.idea/
+
+将删除 __pycache__/
+将删除 static/img/1.png
+将删除 static/img/2.png
+将删除 static/img/3.png
+将删除 static/img/4.png
+将删除 static/img/5.png
+将删除 static/img/6.png
